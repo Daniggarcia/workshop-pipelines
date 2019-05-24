@@ -23,14 +23,15 @@ pipeline {
         echo "-=- compiling project -=-"
       }
     }
-  }
-    
-     stage('Unit tests') {
+
+  stage('Unit tests') {
             steps {
                 echo "-=- execute unit tests -=-"
                 sh "./mvnw test"
                 junit 'target/surefire-reports/*.xml'
                 jacoco execPattern: 'target/jacoco.exec'
             }
-     }
+    }
+             
+  }           
 }
