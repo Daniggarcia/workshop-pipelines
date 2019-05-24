@@ -43,6 +43,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo "-=- packaging project -=-"
+                echo "Felicidades Sergio"
                 sh "./mvnw package -DskipTests"
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
